@@ -42,9 +42,64 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Canvas = __webpack_require__( 2 );
+	var Cube = __webpack_require__( 1 );
+	
+	window.onload = function() {
+	    main();
+	}
+	
+	var main = function() {
+		var canvas = new Canvas();
+		var cube = new Cube();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+/***/ },
+/* 1 */
 /***/ function(module, exports) {
 
+	var Cube = function() {
+		console.log( "Hello I am a cube" );
+	}
+	
+	module.exports = Cube;
 
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	var Canvas = function() {
+		console.log( "Hello I am a canvas" );
+		this.display();
+	}
+	
+	Canvas.prototype = {
+		display: function() {
+	
+			var canvas = document.getElementById( 'canvas' );
+			console.log( canvas );
+			canvas.width = 800;
+			canvas.height = 800;
+		    var context = canvas.getContext( '2d' );
+		    context.fillStyle = "blue";
+			context.fillRect(10,10, 100, 200);
+		},
+	}
+	
+	module.exports = Canvas;
 
 /***/ }
 /******/ ]);
